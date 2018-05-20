@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <CodeAnalysisRuleSet>..\configs\analizers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <DocumentationFile>bin\Debug\netcoreapp2.0\FileSort.Business.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileSort.Core\FileSort.Core.csproj" />
+    <ProjectReference Include="..\FileSort.Models\FileSort.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="Projects and Files Reference">
+    <AdditionalFiles Include="..\configs\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup Label="Code Analyze">
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.Analyzers" Version="1.1.0">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="7.1.0.5212">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
